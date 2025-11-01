@@ -5,6 +5,8 @@ Este projeto demonstra um fluxo de trabalho serverless simples usando uma funç�
 
 Todo o ambiente da AWS é simulado localmente usando o **LocalStack**, permitindo o desenvolvimento e teste sem custos e sem a necessidade de uma conta AWS.
 
+
+
 ## Fluxo da Aplicação
 
 1.  Um arquivo é enviado para um bucket no S3.

@@ -12,3 +12,6 @@ venv/
 # Arquivos de configuração de IDEs
 .vscode/
 .idea/
+
+# Arquivos de configuração específicos do ambiente
+notification.json
