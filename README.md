@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Processador de Arquivos com AWS Lambda, S3 e DynamoDB (LocalStack)
 
 Este projeto demonstra um fluxo de trabalho serverless simples usando uma função AWS Lambda escrita em Python. A função é acionada sempre que um novo arquivo é enviado para um bucket S3, processa o conteúdo do arquivo (esperando um JSON) e o armazena em uma tabela do DynamoDB.
@@ -127,3 +128,6 @@ aws --endpoint-url=http://localhost:4566 dynamodb scan --table-name compromissos
 Você deverá ver o item `NF-123` na saída do comando!
 
 
+=======
+# lab-notas-fiscais
+>>>>>>> 26376a25b1a6e90d138226582764828743458bd2
