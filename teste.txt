@@ -1,0 +1,1 @@
+Teste de evento S3 → Lambda
