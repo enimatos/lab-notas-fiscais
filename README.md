@@ -1,9 +1,11 @@
-<<<<<<< HEAD
 # Processador de Arquivos com AWS Lambda, S3 e DynamoDB (LocalStack)
 
 Este projeto demonstra um fluxo de trabalho serverless simples usando uma função AWS Lambda escrita em Python. A função é acionada sempre que um novo arquivo é enviado para um bucket S3, processa o conteúdo do arquivo (esperando um JSON) e o armazena em uma tabela do DynamoDB.
 
 Todo o ambiente da AWS é simulado localmente usando o **LocalStack**, permitindo o desenvolvimento e teste sem custos e sem a necessidade de uma conta AWS.
+
+![lab-notas-fiscais](images/arquitetura-serverless.png)
+
 
 ## Fluxo da Aplicação
 
@@ -19,10 +21,13 @@ Todo o ambiente da AWS é simulado localmente usando o **LocalStack**, permitind
 
 ```
 lab-notas-fiscais/
+├── images                     # imagens do lab
 ├── lambda/
 │   ├── grava_db.py           # O código-fonte da função Lambda
 │   └── build_lambda.sh       # Script para empacotar a função em um .zip
 │
+├── scripts                   # scripts iniciais para o lab
+├── nota1.json                # Arquivo de exemplo (JSON) para testes
 ├── teste.txt                 # Arquivo de exemplo (não-JSON) para testes
 └── README.md                 # Este arquivo
 ```
@@ -107,14 +112,14 @@ aws --endpoint-url=http://localhost:4566 s3api put-bucket-notification-configura
 
 ### 5. Teste o Fluxo
 
-Crie um arquivo de exemplo `nota.json`:
+Crie um arquivo de exemplo `nota1.json`:
 ```json
 { "id": "NF-123", "cliente": "Empresa Fantasia", "valor": 99.50 }
 ```
 
 Agora, envie-o para o bucket S3:
 ```bash
-aws --endpoint-url=http://localhost:4566 s3 cp nota.json s3://notas-fiscais-upload/
+aws --endpoint-url=http://localhost:4566 s3 cp nota1.json s3://notas-fiscais-upload/
 ```
 
 ### 6. Verifique o Resultado
@@ -128,6 +133,3 @@ aws --endpoint-url=http://localhost:4566 dynamodb scan --table-name compromissos
 Você deverá ver o item `NF-123` na saída do comando!
 
 
-=======
-# lab-notas-fiscais
->>>>>>> 26376a25b1a6e90d138226582764828743458bd2
